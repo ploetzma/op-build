@@ -1,0 +1,41 @@
+From 27cb28db66cd7d16ae20eb8c009b4ba1594c9561 Mon Sep 17 00:00:00 2001
+From: Dan Crowell <dcrowell@us.ibm.com>
+Date: Fri, 8 Jan 2016 09:37:23 -0600
+Subject: [PATCH] Add p8.nvbus.scom.if to list of modules in image
+
+Additional fix for c928140a2939332ddbace437cffe61bb6a4770cf
+
+Change-Id: Id1ebff40af6c4f1749c64c050fa0ada82b0d73b6
+Reviewed-on: http://gfw160.aus.stglabs.ibm.com:8080/gerrit/23136
+Tested-by: Jenkins Server
+Tested-by: Jenkins OP Build CI
+Tested-by: Jenkins OP HW
+Reviewed-by: PRACHI GUPTA <pragupta@us.ibm.com>
+Tested-by: FSP CI Jenkins
+Reviewed-by: STEPHEN M. CPREK <smcprek@us.ibm.com>
+Reviewed-by: A. Patrick Williams III <iawillia@us.ibm.com>
+---
+ src/makefile | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/makefile b/src/makefile
+index 4f058cd..42b9ace 100644
+--- a/src/makefile
++++ b/src/makefile
+@@ -5,7 +5,7 @@
+ #
+ # OpenPOWER HostBoot Project
+ #
+-# Contributors Listed Below - COPYRIGHT 2010,2015
++# Contributors Listed Below - COPYRIGHT 2010,2016
+ # [+] Google Inc.
+ # [+] International Business Machines Corp.
+ #
+@@ -296,6 +296,7 @@ hbicore_DATA_MODULES += p8.tpbridge.scom.if
+ hbicore_DATA_MODULES += p8.cxa.scom.if
+ hbicore_DATA_MODULES += p8.a_x_pci_dmi_fir.scom.if
+ hbicore_DATA_MODULES += p8.npu.scom.if
++hbicore_DATA_MODULES += p8.nvbus.scom.if
+ 
+ hbicore_test_OBJECTS += ${hbicore_OBJECTS}
+ hbicore_test_MODULES += ${hbicore_MODULES}
