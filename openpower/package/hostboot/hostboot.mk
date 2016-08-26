@@ -3,8 +3,10 @@
 # hostboot
 #
 ################################################################################
+HOSTBOOT_VERSION_BRANCH_MASTER_P8 = d9ee1a14df554f23d988bb4fe0e6c4915a9b895c
+HOSTBOOT_VERSION_BRANCH_MASTER = f5d53757fabb36a84abb75c2f97b66a7429f134b
 
-HOSTBOOT_VERSION ?= d7c9d9ccac2defbc195a385fe1a97285b9c388a1
+HOSTBOOT_VERSION ?= $(if $(BR2_OPENPOWER_POWER9),$(HOSTBOOT_VERSION_BRANCH_MASTER),$(HOSTBOOT_VERSION_BRANCH_MASTER_P8))
 HOSTBOOT_SITE ?= $(call github,open-power,hostboot,$(HOSTBOOT_VERSION))
 
 HOSTBOOT_LICENSE = Apache-2.0
