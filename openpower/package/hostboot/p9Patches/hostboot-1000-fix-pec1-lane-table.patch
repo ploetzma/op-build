@@ -1,0 +1,38 @@
+From bfe37c8654f8bb84e958e4b1c6ef6be77fad578a Mon Sep 17 00:00:00 2001
+From: Matt Ploetz <maploetz@us.ibm.com>
+Date: Mon, 6 Mar 2017 14:44:23 -0600
+Subject: [PATCH] Add PHB1 and PHB2 independence to PEC1
+
+Change-Id: I4f746bd54b7fc501756e65b0201dcac863e70a44
+---
+ src/usr/isteps/istep08/host_proc_pcie_scominit.C | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/src/usr/isteps/istep08/host_proc_pcie_scominit.C b/src/usr/isteps/istep08/host_proc_pcie_scominit.C
+index 3dd7805..271afe0 100644
+--- a/src/usr/isteps/istep08/host_proc_pcie_scominit.C
++++ b/src/usr/isteps/istep08/host_proc_pcie_scominit.C
+@@ -356,6 +356,20 @@ errlHndl_t computeProcPcieConfigAttrs(TARGETING::Target * i_pProcChipTarget)
+            LANE_WIDTH_NC},
+            0x00,PHB1_MASK|PHB2_MASK,
+            PHB_X8_X8_MAC_MAP},
++
++         {{LANE_WIDTH_8X,
++           LANE_WIDTH_NC,
++           LANE_WIDTH_NC,
++           LANE_WIDTH_NC},
++           0x00,PHB1_MASK,
++           PHB_X8_X8_MAC_MAP},
++
++         {{LANE_WIDTH_NC,
++           LANE_WIDTH_NC,
++           LANE_WIDTH_8X,
++           LANE_WIDTH_NC},
++           0x00,PHB2_MASK,
++           PHB_X8_X8_MAC_MAP},
+         };
+ 
+     const laneConfigRow pec2_laneConfigTable[] =
+-- 
+1.8.2.2
+
